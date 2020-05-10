@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - UserResponse
-struct UserResponse: Encodable {
+struct UserResponse: Decodable {
     var user: User?
 }
 

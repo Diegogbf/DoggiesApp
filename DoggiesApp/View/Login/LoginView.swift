@@ -1,34 +1,18 @@
 //
-//  ViewController.swift
+//  LoginView.swift
 //  DoggiesApp
 //
-//  Created by Diego Gomes on 08/05/20.
+//  Created by Diego Gomes on 10/05/20.
 //  Copyright © 2020 Diego Gomes. All rights reserved.
 //
 
 import UIKit
 import SnapKit
 
-class LoginViewController: UIViewController {
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func loadView() {
-        super.loadView()
-        view = LoginView()
-    }
-    
-    
-}
-
 class LoginView: UIView {
     
     // MARK: - Components
-    private lazy var emailTextField: UITextField = {
+    lazy var emailTextField: UITextField = {
         let emailTextField = UITextField(frame: .zero)
         emailTextField.placeholder = "E-mail"
         emailTextField.tintColor = .black
@@ -37,7 +21,7 @@ class LoginView: UIView {
         return emailTextField
     }()
     
-    private lazy var signinButton: UIButton = {
+    lazy var signinButton: UIButton = {
         let signinButton = UIButton(frame: .zero)
         signinButton.setTitle("Sign In", for: .normal)
         signinButton.backgroundColor = .blue
