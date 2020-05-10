@@ -30,6 +30,7 @@
 		585D9A8924657583002C8012 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585D9A8724657583002C8012 /* LaunchScreen.storyboard */; };
 		585D9A9424657584002C8012 /* DoggiesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A9324657584002C8012 /* DoggiesAppTests.swift */; };
 		585D9A9F24657584002C8012 /* DoggiesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A9E24657584002C8012 /* DoggiesAppUITests.swift */; };
+		587FC7272468A3C000C9B580 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FC7262468A3C000C9B580 /* FeedView.swift */; };
 		58A57D622467C28A00E8E7AA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A57D612467C28A00E8E7AA /* LoginView.swift */; };
 		58E86A9A2467C3E8008FAF44 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E86A992467C3E8008FAF44 /* LoginViewModel.swift */; };
 		58E86A9C2467C9EE008FAF44 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E86A9B2467C9EE008FAF44 /* UIViewController+Extensions.swift */; };
@@ -94,6 +95,7 @@
 		585D9A9A24657584002C8012 /* DoggiesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoggiesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		585D9A9E24657584002C8012 /* DoggiesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggiesAppUITests.swift; sourceTree = "<group>"; };
 		585D9AA024657584002C8012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		587FC7262468A3C000C9B580 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		58A57D612467C28A00E8E7AA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		58E86A992467C3E8008FAF44 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		58E86A9B2467C9EE008FAF44 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		580F41632467AEF800A086C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				587FC7252468A3AC00C9B580 /* Feed */,
 				58A57D602467C27300E8E7AA /* Login */,
 			);
 			path = View;
@@ -280,6 +283,14 @@
 				585D9AA024657584002C8012 /* Info.plist */,
 			);
 			path = DoggiesAppUITests;
+			sourceTree = "<group>";
+		};
+		587FC7252468A3AC00C9B580 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				587FC7262468A3C000C9B580 /* FeedView.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		58A57D602467C27300E8E7AA /* Login */ = {
@@ -573,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				585D9A8124657580002C8012 /* LoginViewController.swift in Sources */,
+				587FC7272468A3C000C9B580 /* FeedView.swift in Sources */,
 				5843E0EA2467A4C500E82E90 /* NetworkResponse.swift in Sources */,
 				585D9A7D24657580002C8012 /* AppDelegate.swift in Sources */,
 				5843E0EB2467A4C500E82E90 /* HTTPMethod.swift in Sources */,
