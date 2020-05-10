@@ -34,11 +34,15 @@ final class LoginViewModel: LoginViewModelType {
         delegate?.loader(show: true)
         ServiceLayer.request(
             route: Router.signup(request: User(email: email)),
-            onSuccess: { [weak self] (user: UserResponse) in
+            onSuccess: { [weak self] (userResponse: UserResponse) in
                 guard let self = self else { return }
                 self.delegate?.loader(show: false)
-                self.storeUserToken()
-                self.delegate?.succesSignin()
+                if let userToken = userResponse.user?.token {
+                    self.storeUserToken(accessToken: userToken)
+                    self.delegate?.succesSignin()
+                } else {
+                    self.delegate?.showError(msg: "Missing User Token")
+                }
             },
             onError: { [weak self] erroMsg in
                 guard let self = self else { return }
@@ -48,7 +52,7 @@ final class LoginViewModel: LoginViewModelType {
         )
     }
     
-    private func storeUserToken() {
-        
+    private func storeUserToken(accessToken: String) {
+        LocalPersistence.shared[.accessToken] = accessToken
     }
 }

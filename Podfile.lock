@@ -1,16 +1,20 @@
 PODS:
   - SnapKit (4.2.0)
+  - SwiftKeychainWrapper (3.4.0)
 
 DEPENDENCIES:
   - SnapKit
+  - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
     - SnapKit
+    - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
 
-PODFILE CHECKSUM: 99f35a1806c82156b420d6a4e63fc7d60a8652f6
+PODFILE CHECKSUM: d4a9d39bb18cd9de236196f5f1a29129fbabba22
 
 COCOAPODS: 1.9.1

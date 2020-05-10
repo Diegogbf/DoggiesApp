@@ -7,6 +7,7 @@ target 'DoggiesApp' do
 
   # Pods for DoggiesApp
   pod 'SnapKit'
+  pod 'SwiftKeychainWrapper'
 
   target 'DoggiesAppTests' do
     inherit! :search_paths
