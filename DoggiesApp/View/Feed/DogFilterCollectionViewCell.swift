@@ -18,7 +18,7 @@ class DogFilterCollectionViewCell: UICollectionViewCell, Reusable {
     private lazy var containerView: UIView = {
         let containerView = UIView(frame: .zero)
         containerView.layer.cornerRadius = Layout.containerRadius
-        containerView.backgroundColor = .blue
+        containerView.backgroundColor = .gray
         return containerView
     }()
     
@@ -32,6 +32,12 @@ class DogFilterCollectionViewCell: UICollectionViewCell, Reusable {
     private enum Layout {
         static let containerRadius: CGFloat = 8
         static let labelEdgesDistance: CGFloat = 16
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            containerView.backgroundColor = isSelected ? .blue : .gray
+        }
     }
     
     override func didMoveToSuperview() {
