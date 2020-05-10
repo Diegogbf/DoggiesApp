@@ -38,15 +38,18 @@ final class FeedViewModel: FeedViewModelType {
     }
     
     func getFeed() {
+        delegate?.loader(show: true)
         ServiceLayer.request(
             route: Router.getFeed(request: Feed(category: currentFeed?.category)),
             onSuccess: { [weak self] (feed: Feed) in
                 guard let self = self else { return }
+                self.delegate?.loader(show: false)
                 self.currentFeed = feed
                 self.delegate?.succes()
             },
             onError: { [weak self] errorMsg in
                 guard let self = self else { return }
+                self.delegate?.loader(show: false)
                 self.delegate?.showError(msg: errorMsg)
             }
         )

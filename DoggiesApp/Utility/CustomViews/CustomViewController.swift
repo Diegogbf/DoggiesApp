@@ -26,7 +26,9 @@ class CustomViewController<ContentView: UIView>: UIViewController {
     
     // MARK: - Handling Keyboard
     private func dismissKeyboardOnViewTouch() {
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped)))
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        viewTap.cancelsTouchesInView = false
+        view.addGestureRecognizer(viewTap)
     }
     
     @objc private func viewTapped() {

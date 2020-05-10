@@ -27,8 +27,8 @@ class FeedView: UIView {
         return collectionView
     }()
     
-    lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero)
+    lazy var tableView: CustomTableView = {
+        let tableView = CustomTableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.rowHeight = Layout.tableViewRowHeight
         tableView.backgroundColor = .white

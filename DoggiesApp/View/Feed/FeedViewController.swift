@@ -22,21 +22,36 @@ class FeedViewController: CustomViewController<FeedView> {
     // MARK: Setup
     private func setup() {
         title = "DoggiesApp"
-        setupDelegation()
+        setupTableView()
+        setupCollectionView()
     }
     
-    private func setupDelegation() {
+    private func setupTableView() {
         contentView.tableView.delegate = self
         contentView.tableView.dataSource = self
+        contentView.tableView.pullToRefreshAction = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.getFeed()
+        }
+    }
+    
+    private func setupCollectionView() {
         contentView.collectionView.delegate = self
         contentView.collectionView.dataSource = self
+        selectFilter(at: 0)
+    }
+    
+    private func selectFilter(at index: Int) {
+        contentView.collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .left)
+        viewModel.currentFeed = Feed(category: viewModel.filterOptions[0].rawValue)
+        viewModel.getFeed()
     }
 }
 
 // MARK: FeedFeedBack
 extension FeedViewController: FeedFeedBack {
     func loader(show: Bool) {
-        //Loader
+        contentView.tableView.showLoader(show)
     }
     
     func succes() {
@@ -60,9 +75,8 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.currentFeed = Feed(category: viewModel.filterOptions[indexPath.item].rawValue)
-        viewModel.getFeed()
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectFilter(at: indexPath.item)
     }
 }
 
