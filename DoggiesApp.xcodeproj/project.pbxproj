@@ -19,6 +19,8 @@
 		5843E0ED2467A4C500E82E90 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843E0E32467A4C500E82E90 /* Router.swift */; };
 		5843E0FD2467A68E00E82E90 /* HTTPURLResponse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843E0F52467A68E00E82E90 /* HTTPURLResponse+Extensions.swift */; };
 		5843E1012467A6D500E82E90 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843E1002467A6D500E82E90 /* Encodable.swift */; };
+		5843E1052467A89E00E82E90 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843E1042467A89E00E82E90 /* Feed.swift */; };
+		5843E1072467A91700E82E90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843E1062467A91700E82E90 /* User.swift */; };
 		585D9A7D24657580002C8012 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A7C24657580002C8012 /* AppDelegate.swift */; };
 		585D9A7F24657580002C8012 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A7E24657580002C8012 /* SceneDelegate.swift */; };
 		585D9A8124657580002C8012 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A8024657580002C8012 /* ViewController.swift */; };
@@ -59,6 +61,8 @@
 		5843E0E32467A4C500E82E90 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		5843E0F52467A68E00E82E90 /* HTTPURLResponse+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Extensions.swift"; sourceTree = "<group>"; };
 		5843E1002467A6D500E82E90 /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		5843E1042467A89E00E82E90 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		5843E1062467A91700E82E90 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		585D9A7924657580002C8012 /* DoggiesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoggiesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		585D9A7C24657580002C8012 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		585D9A7E24657580002C8012 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +170,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		5843E1032467A84F00E82E90 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5843E1042467A89E00E82E90 /* Feed.swift */,
+				5843E1062467A91700E82E90 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		585D9A7024657580002C8012 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +202,7 @@
 		585D9A7B24657580002C8012 /* DoggiesApp */ = {
 			isa = PBXGroup;
 			children = (
+				5843E1032467A84F00E82E90 /* Models */,
 				585D9A7C24657580002C8012 /* AppDelegate.swift */,
 				585D9A7E24657580002C8012 /* SceneDelegate.swift */,
 				585D9A8024657580002C8012 /* ViewController.swift */,
@@ -359,7 +373,9 @@
 				5843E0E62467A4C500E82E90 /* JSONParameterEncoder.swift in Sources */,
 				5843E0E42467A4C500E82E90 /* ParameterEncoder.swift in Sources */,
 				5843E0E82467A4C500E82E90 /* HTTPTask.swift in Sources */,
+				5843E1072467A91700E82E90 /* User.swift in Sources */,
 				5843E0E52467A4C500E82E90 /* URLParameterEncoder.swift in Sources */,
+				5843E1052467A89E00E82E90 /* Feed.swift in Sources */,
 				5843E0EC2467A4C500E82E90 /* EndPointType.swift in Sources */,
 				5843E0E72467A4C500E82E90 /* EndPoint.swift in Sources */,
 				5843E0E92467A4C500E82E90 /* ServiceLayer.swift in Sources */,

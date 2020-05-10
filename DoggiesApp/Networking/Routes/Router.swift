@@ -9,8 +9,8 @@
 import Foundation
 
 enum Router {
-    case getFeed
-    case signup(request: Codable)
+    case getFeed(request: Feed)
+    case signup(request: User)
 }
 
 extension Router: EndPointType {
@@ -38,8 +38,8 @@ extension Router: EndPointType {
     
     var task: HTTPTask {
         switch self {
-        case .getFeed:
-            return .requestParameters(bodyParameters: nil, urlParameters: nil)
+        case .getFeed(let request):
+            return .requestParameters(bodyParameters: nil, urlParameters: request.dictionary)
         case .signup(let request):
             return .requestParameters(bodyParameters: request.dictionary, urlParameters: nil)
         }
