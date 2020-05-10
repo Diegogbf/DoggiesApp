@@ -37,6 +37,7 @@
 		58E86AA02467CCD5008FAF44 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E86A9F2467CCD5008FAF44 /* String+Extensions.swift */; };
 		58E86AA324688C09008FAF44 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E86AA224688C09008FAF44 /* CustomTextField.swift */; };
 		58E86AA524688FCE008FAF44 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E86AA424688FCE008FAF44 /* CustomViewController.swift */; };
+		58E86AA7246892EA008FAF44 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E86AA6246892EA008FAF44 /* CustomButton.swift */; };
 		8B0815749418EB2D08555E3D /* Pods_DoggiesApp_DoggiesAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89225BA5BEC4D96317CAC93 /* Pods_DoggiesApp_DoggiesAppUITests.framework */; };
 		EF25500A4130A81093684EE7 /* Pods_DoggiesAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC36E3723A349CD6B5FD8C /* Pods_DoggiesAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 		58E86A9F2467CCD5008FAF44 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		58E86AA224688C09008FAF44 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		58E86AA424688FCE008FAF44 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		58E86AA6246892EA008FAF44 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5B320940AE13D0906B3328D7 /* Pods-DoggiesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggiesApp.debug.xcconfig"; path = "Target Support Files/Pods-DoggiesApp/Pods-DoggiesApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5E9632E47BEC998CABB1E7BD /* Pods-DoggiesApp-DoggiesAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggiesApp-DoggiesAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-DoggiesApp-DoggiesAppUITests/Pods-DoggiesApp-DoggiesAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D1A36E01C79304816DB00429 /* Pods_DoggiesApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoggiesApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,6 +294,7 @@
 			children = (
 				58E86AA224688C09008FAF44 /* CustomTextField.swift */,
 				58E86AA424688FCE008FAF44 /* CustomViewController.swift */,
+				58E86AA6246892EA008FAF44 /* CustomButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				5843E0EA2467A4C500E82E90 /* NetworkResponse.swift in Sources */,
 				585D9A7D24657580002C8012 /* AppDelegate.swift in Sources */,
 				5843E0EB2467A4C500E82E90 /* HTTPMethod.swift in Sources */,
+				58E86AA7246892EA008FAF44 /* CustomButton.swift in Sources */,
 				58E86AA324688C09008FAF44 /* CustomTextField.swift in Sources */,
 				5843E1012467A6D500E82E90 /* Encodable.swift in Sources */,
 				5843E0E62467A4C500E82E90 /* JSONParameterEncoder.swift in Sources */,

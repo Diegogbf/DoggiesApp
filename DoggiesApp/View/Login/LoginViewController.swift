@@ -34,7 +34,7 @@ class LoginViewController: CustomViewController<LoginView> {
 
 extension LoginViewController: LoginViewControllerFeedback {
     func loader(show: Bool) {
-        // Loader on button
+        show ? contentView.signinButton.showLoader() : contentView.signinButton.hideLoader()
     }
     
     func succesSignin() {

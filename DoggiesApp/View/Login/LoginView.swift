@@ -12,14 +12,13 @@ import SnapKit
 class LoginView: UIView {
     
     // MARK: - Components
-    lazy var emailTextField: UITextField = {
+    lazy var emailTextField: CustomTextField = {
         let emailTextField = CustomTextField(type: .email)
         return emailTextField
     }()
     
-    lazy var signinButton: UIButton = {
-        let signinButton = UIButton(frame: .zero)
-        signinButton.setTitle("Sign In", for: .normal)
+    lazy var signinButton: CustomButton = {
+        let signinButton = CustomButton(title: "Sign In")
         signinButton.backgroundColor = .blue
         signinButton.layer.cornerRadius = Layout.signinButtonCornerRadius
         return signinButton
