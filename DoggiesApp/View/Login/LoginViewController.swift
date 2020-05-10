@@ -8,10 +8,9 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: CustomViewController<LoginView> {
     
     // MARK: - Constants
-    private let loginView = LoginView()
     private lazy var viewModel: LoginViewModelType = LoginViewModel(delegate: self)
     
     // MARK: - Life Cycle
@@ -20,18 +19,13 @@ class LoginViewController: UIViewController {
         setup()
     }
     
-    override func loadView() {
-        super.loadView()
-        view = loginView
-    }
-    
     // MARK: - Setup
     private func setup() {
-        loginView.signinButton.addTarget(self, action: #selector(signin), for: .touchUpInside)
+        contentView.signinButton.addTarget(self, action: #selector(signin), for: .touchUpInside)
     }
     
     @objc private func signin() {
-        guard let email = loginView.emailTextField.text else { return }
+        guard let email = contentView.emailTextField.text else { return }
         if email.isValidEmail {
             viewModel.signin(email: email)
         }
