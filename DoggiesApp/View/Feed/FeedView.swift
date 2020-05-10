@@ -15,6 +15,9 @@ class FeedView: UIView {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
+        if #available(iOS 10.0, *) {
+            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        } 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
@@ -22,6 +25,7 @@ class FeedView: UIView {
         collectionView.contentInset = UIEdgeInsets(top: 0, left: Layout.collectionLeftInset, bottom: 0, right: 0)
         collectionView.backgroundColor = .white
         collectionView.register(DogFilterCollectionViewCell.self)
+        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
     
@@ -35,6 +39,9 @@ class FeedView: UIView {
         tableView.register(DogPictureTableViewCell.self)
         return tableView
     }()
+    
+    var filterItens: [String] = []
+    var dogsPictures: [String] = []
     
     private enum Layout {
         static let collectionLeftInset: CGFloat = 16
@@ -53,7 +60,7 @@ class FeedView: UIView {
         [collectionView, tableView].forEach { addSubview($0) }
         
         collectionView.snp.makeConstraints {
-            $0.leading.top.trailing.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
             $0.height.equalTo(Layout.collectionHeight)
         }
         
@@ -67,12 +74,12 @@ class FeedView: UIView {
 // MARK: UICollectionViewDelegate and UICollectionViewDataSource
 extension FeedView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return filterItens.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(DogFilterCollectionViewCell.self, indexPath: indexPath)
-        cell.set(filterName: "")
+        cell.set(filterName: filterItens[indexPath.item])
         return cell
     }
 }
@@ -80,12 +87,12 @@ extension FeedView: UICollectionViewDelegate, UICollectionViewDataSource {
 // MARK: UITableViewDelegate and UITableViewDataSource
 extension FeedView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return dogsPictures.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(DogPictureTableViewCell.self, indexPath: indexPath)
-        cell.set(image: "")
+        cell.set(image: dogsPictures[indexPath.row])
         return cell
     }
 }

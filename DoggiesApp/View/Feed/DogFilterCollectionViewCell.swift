@@ -18,17 +18,19 @@ class DogFilterCollectionViewCell: UICollectionViewCell, Reusable {
     private lazy var containerView: UIView = {
         let containerView = UIView(frame: .zero)
         containerView.layer.cornerRadius = Layout.containerRadius
+        containerView.backgroundColor = .blue
         return containerView
     }()
     
     private lazy var filterNameLabel: UILabel = {
         let filterNameLabel = UILabel(frame: .zero)
+        filterNameLabel.textColor = .white
+        filterNameLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         return filterNameLabel
     }()
     
     private enum Layout {
         static let containerRadius: CGFloat = 8
-        static let containerTrailingDistance: CGFloat = 16
         static let labelEdgesDistance: CGFloat = 16
     }
     
@@ -41,13 +43,12 @@ class DogFilterCollectionViewCell: UICollectionViewCell, Reusable {
     private func setupLayout() {
         contentView.addSubview(containerView)
         containerView.snp.makeConstraints {
-            $0.leading.top.bottom.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(Layout.containerTrailingDistance)
+            $0.edges.equalToSuperview()
         }
         
         containerView.addSubview(filterNameLabel)
         filterNameLabel.snp.makeConstraints {
-            $0.edges.equalTo(Layout.labelEdgesDistance)
+            $0.edges.equalToSuperview().inset(Layout.labelEdgesDistance)
         }
     }
     

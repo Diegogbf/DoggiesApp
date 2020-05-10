@@ -29,9 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backgroundColor = .white
         UINavigationBar.appearance().barTintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
-        UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().isTranslucent = false
         if #available(iOS 11.0, *) {
-            UINavigationBar.appearance().prefersLargeTitles = true
+            UINavigationBar.appearance().prefersLargeTitles = false
         }
     }
     
