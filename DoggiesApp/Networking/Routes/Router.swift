@@ -46,7 +46,13 @@ extension Router: EndPointType {
     }
     
     var headers: HTTPHeaders? {
-        return nil
+        
+        switch self {
+        case .getFeed:
+            return ["Authorization": LocalPersistence.shared[.accessToken]]
+        default:
+            return nil
+        }
     }
 }
 
