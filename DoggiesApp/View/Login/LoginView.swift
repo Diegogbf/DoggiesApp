@@ -13,11 +13,7 @@ class LoginView: UIView {
     
     // MARK: - Components
     lazy var emailTextField: UITextField = {
-        let emailTextField = UITextField(frame: .zero)
-        emailTextField.placeholder = "E-mail"
-        emailTextField.tintColor = .black
-        emailTextField.keyboardType = .emailAddress
-        emailTextField.borderStyle = .roundedRect
+        let emailTextField = CustomTextField(type: .email)
         return emailTextField
     }()
     

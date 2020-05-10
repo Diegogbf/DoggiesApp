@@ -16,6 +16,7 @@ protocol LoginViewControllerFeedback: class {
 
 protocol LoginViewModelType {
     func signin(email: String)
+    func validate(email: String)
     init(delegate: LoginViewControllerFeedback)
 }
 
@@ -46,6 +47,12 @@ final class LoginViewModel: LoginViewModelType {
                 self.delegate?.showError(msg: erroMsg)
             }
         )
+    }
+    
+    func validate(email: String) {
+        if !email.isValidEmail {
+            delegate?.showError(msg: "E-mail Inválido!")
+        }
     }
     
     private func storeUserToken() {

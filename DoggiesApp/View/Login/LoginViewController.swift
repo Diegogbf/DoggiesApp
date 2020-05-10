@@ -27,20 +27,14 @@ class LoginViewController: UIViewController {
     
     // MARK: - Setup
     private func setup() {
-        loginView.emailTextField.delegate = self
         loginView.signinButton.addTarget(self, action: #selector(signin), for: .touchUpInside)
     }
     
     @objc private func signin() {
         guard let email = loginView.emailTextField.text else { return }
-        //Email validation
-        viewModel.signin(email: email)
-    }
-}
-
-extension LoginViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        //Email validation
+        if email.isValidEmail {
+            viewModel.signin(email: email)
+        }
     }
 }
 
