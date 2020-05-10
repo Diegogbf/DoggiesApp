@@ -21,6 +21,7 @@ class FeedView: UIView {
         collectionView.dataSource = self
         collectionView.contentInset = UIEdgeInsets(top: 0, left: Layout.collectionLeftInset, bottom: 0, right: 0)
         collectionView.backgroundColor = .white
+        collectionView.register(DogFilterCollectionViewCell.self)
         return collectionView
     }()
     
@@ -31,6 +32,7 @@ class FeedView: UIView {
         tableView.dataSource = self
         tableView.rowHeight = Layout.tableViewRowHeight
         tableView.backgroundColor = .white
+        tableView.register(DogPictureTableViewCell.self)
         return tableView
     }()
     
@@ -69,7 +71,9 @@ extension FeedView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(DogFilterCollectionViewCell.self, indexPath: indexPath)
+        cell.set(filterName: "")
+        return cell
     }
 }
 
@@ -80,6 +84,8 @@ extension FeedView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(DogPictureTableViewCell.self, indexPath: indexPath)
+        cell.set(image: "")
+        return cell
     }
 }
