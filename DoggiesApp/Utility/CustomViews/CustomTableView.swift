@@ -35,6 +35,8 @@ class CustomTableView: UITableView {
     }
     
     func showLoader(_ show: Bool) {
-        show ? pullToRefreshControl.beginRefreshing() : pullToRefreshControl.endRefreshing()
+        DispatchQueue.main.async {
+            show ? self.pullToRefreshControl.beginRefreshing() : self.pullToRefreshControl.endRefreshing()
+        }
     }
 }
