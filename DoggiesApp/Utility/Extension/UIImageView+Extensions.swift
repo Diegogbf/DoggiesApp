@@ -16,11 +16,17 @@ extension UIImageView {
     func downloadImage(url: String?) {
         image = nil
         if let stringUrl = url, let url = URL(string: stringUrl) {
-            getImagetData(from: url) { data, response, error in
-                guard let data = data, error == nil else { return }
-                DispatchQueue.main.async() { [weak self] in
-                    guard let self = self else { return }
-                    self.image = UIImage(data: data)
+            if let cachedImage = ImageCache.shared[url] {
+                image = cachedImage
+            } else {
+                getImagetData(from: url) { data, response, error in
+                    guard let data = data, error == nil else { return }
+                    DispatchQueue.main.async() { [weak self] in
+                        guard let self = self else { return }
+                        let apiImage = UIImage(data: data)
+                        ImageCache.shared[url] = apiImage
+                        self.image = apiImage
+                    }
                 }
             }
         }
