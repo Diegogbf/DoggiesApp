@@ -43,7 +43,7 @@ class FeedViewController: CustomViewController<FeedView> {
     
     private func selectFilter(at index: Int) {
         contentView.collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .left)
-        viewModel.currentFeed = Feed(category: viewModel.filterOptions[0].rawValue)
+        viewModel.currentFeed = Feed(category: viewModel.filterOptions[index].rawValue)
         viewModel.getFeed()
     }
 }

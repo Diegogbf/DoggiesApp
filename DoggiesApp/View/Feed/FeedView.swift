@@ -33,6 +33,7 @@ class FeedView: UIView {
         tableView.rowHeight = Layout.tableViewRowHeight
         tableView.backgroundColor = .white
         tableView.register(DogPictureTableViewCell.self)
+        tableView.separatorStyle = .none
         return tableView
     }()
     

@@ -31,7 +31,7 @@ class DogFilterCollectionViewCell: UICollectionViewCell, Reusable {
     
     private enum Layout {
         static let containerRadius: CGFloat = 8
-        static let labelEdgesDistance: CGFloat = 16
+        static let labelEdgesDistance: CGFloat = 8
     }
     
     override var isSelected: Bool {
