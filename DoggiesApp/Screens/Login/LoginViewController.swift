@@ -38,9 +38,9 @@ extension LoginViewController: LoginViewControllerFeedback {
     }
     
     func succesSignin() {
-        let feedVC = FeedViewController()
-        feedVC.modalPresentationStyle = .fullScreen
-        present(UINavigationController(rootViewController: feedVC), animated: true, completion: nil)
+        let feedNav = UINavigationController(rootViewController: FeedViewController())
+        feedNav.modalPresentationStyle = .fullScreen
+        present(feedNav, animated: true, completion: nil)
     }
     
     func showError(msg: String) {
