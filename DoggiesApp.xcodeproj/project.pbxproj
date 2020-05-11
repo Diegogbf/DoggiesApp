@@ -31,7 +31,7 @@
 		585D9A9424657584002C8012 /* DoggiesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A9324657584002C8012 /* DoggiesAppTests.swift */; };
 		585D9A9F24657584002C8012 /* DoggiesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A9E24657584002C8012 /* DoggiesAppUITests.swift */; };
 		587FC7272468A3C000C9B580 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FC7262468A3C000C9B580 /* FeedView.swift */; };
-		587FC7292468A79B00C9B580 /* DogPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FC7282468A79B00C9B580 /* DogPictureTableViewCell.swift */; };
+		587FC7292468A79B00C9B580 /* DogPictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FC7282468A79B00C9B580 /* DogPictureCollectionViewCell.swift */; };
 		587FC72C2468A9E000C9B580 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FC72A2468A9E000C9B580 /* UITableView+Extensions.swift */; };
 		587FC72D2468A9E000C9B580 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FC72B2468A9E000C9B580 /* UICollectionView+Extensions.swift */; };
 		587FC72F2468A9EE00C9B580 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FC72E2468A9EE00C9B580 /* Reusable.swift */; };
@@ -108,7 +108,7 @@
 		585D9A9E24657584002C8012 /* DoggiesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggiesAppUITests.swift; sourceTree = "<group>"; };
 		585D9AA024657584002C8012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587FC7262468A3C000C9B580 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
-		587FC7282468A79B00C9B580 /* DogPictureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogPictureTableViewCell.swift; sourceTree = "<group>"; };
+		587FC7282468A79B00C9B580 /* DogPictureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogPictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		587FC72A2468A9E000C9B580 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		587FC72B2468A9E000C9B580 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		587FC72E2468A9EE00C9B580 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -337,7 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				587FC7262468A3C000C9B580 /* FeedView.swift */,
-				587FC7282468A79B00C9B580 /* DogPictureTableViewCell.swift */,
+				587FC7282468A79B00C9B580 /* DogPictureCollectionViewCell.swift */,
 				587FC7302468AAC700C9B580 /* DogFilterCollectionViewCell.swift */,
 			);
 			path = UIElements;
@@ -681,7 +681,7 @@
 				587FC7372468C42800C9B580 /* CustomTableView.swift in Sources */,
 				587FC72C2468A9E000C9B580 /* UITableView+Extensions.swift in Sources */,
 				5843E0E72467A4C500E82E90 /* EndPoint.swift in Sources */,
-				587FC7292468A79B00C9B580 /* DogPictureTableViewCell.swift in Sources */,
+				587FC7292468A79B00C9B580 /* DogPictureCollectionViewCell.swift in Sources */,
 				5843E0E92467A4C500E82E90 /* ServiceLayer.swift in Sources */,
 				587FC7392468DDAF00C9B580 /* UIImageView+Extensions.swift in Sources */,
 				58E86AA924689ABE008FAF44 /* LocalPersistence.swift in Sources */,

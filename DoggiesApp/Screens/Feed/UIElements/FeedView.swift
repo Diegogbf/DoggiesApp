@@ -12,35 +12,42 @@ import SnapKit
 class FeedView: UIView {
     
     // MARK: Components
-    lazy var collectionView: UICollectionView = {
+    lazy var filterCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
+        layout.scrollDirection = .horizontal
         if #available(iOS 10.0, *) {
             layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         } 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: Layout.collectionLeftInset, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: Layout.filterCollectionLeftInset, bottom: 0, right: 0)
         collectionView.backgroundColor = .white
         collectionView.register(DogFilterCollectionViewCell.self)
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
     
-    lazy var tableView: CustomTableView = {
-        let tableView = CustomTableView(frame: .zero)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.rowHeight = Layout.tableViewRowHeight
-        tableView.backgroundColor = .white
-        tableView.register(DogPictureTableViewCell.self)
-        tableView.separatorStyle = .none
-        return tableView
+    lazy var dogsCollectionView: CustomCollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collectionView = CustomCollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.contentInset = UIEdgeInsets(
+            top: 0,
+            left: Layout.dogsCollectionSideInset,
+            bottom: 0,
+            right: Layout.dogsCollectionSideInset
+        )
+        collectionView.backgroundColor = .white
+        collectionView.register(DogPictureCollectionViewCell.self)
+        collectionView.showsHorizontalScrollIndicator = false
+        return collectionView
     }()
     
     private enum Layout {
-        static let collectionLeftInset: CGFloat = 16
-        static let collectionHeight: CGFloat = 60
-        static let tableViewRowHeight: CGFloat = 200
+        static let filterCollectionLeftInset: CGFloat = 16
+        static let filterCollectionHeight: CGFloat = 60
+        static let dogsCollectionSideInset: CGFloat = 5
     }
     
     // MARK: Life Cycle
@@ -51,15 +58,15 @@ class FeedView: UIView {
     
     // MARK: Setup
     private func setupLayout() {
-        [collectionView, tableView].forEach { addSubview($0) }
+        [filterCollectionView, dogsCollectionView].forEach { addSubview($0) }
         
-        collectionView.snp.makeConstraints {
+        filterCollectionView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
-            $0.height.equalTo(Layout.collectionHeight)
+            $0.height.equalTo(Layout.filterCollectionHeight)
         }
         
-        tableView.snp.makeConstraints {
-            $0.top.equalTo(collectionView.snp.bottom)
+        dogsCollectionView.snp.makeConstraints {
+            $0.top.equalTo(filterCollectionView.snp.bottom)
             $0.leading.bottom.trailing.equalToSuperview()
         }
     }

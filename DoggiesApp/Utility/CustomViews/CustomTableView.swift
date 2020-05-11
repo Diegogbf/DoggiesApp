@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTableView: UITableView {
+class CustomCollectionView: UICollectionView {
     
     // MARK: - Variables
     private lazy var pullToRefreshControl: UIRefreshControl = {
