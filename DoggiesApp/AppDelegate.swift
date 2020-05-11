@@ -21,7 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = LoginViewController()
+        if LocalPersistence.shared[.accessToken].isEmpty {
+            window?.rootViewController = LoginViewController()
+        } else {
+            window?.rootViewController = UINavigationController(
+                rootViewController: FeedViewController()
+            )
+        }
         window?.makeKeyAndVisible()
     }
     
