@@ -163,14 +163,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		580F41632467AEF800A086C3 /* View */ = {
+		580F41632467AEF800A086C3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				587FC73D2468F54000C9B580 /* Dog */,
 				587FC7252468A3AC00C9B580 /* Feed */,
 				58A57D602467C27300E8E7AA /* Login */,
 			);
-			path = View;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		5843E0D52467A4C500E82E90 /* Networking */ = {
@@ -180,6 +180,7 @@
 				5843E0DA2467A4C500E82E90 /* EndPoint */,
 				5843E0DC2467A4C500E82E90 /* Service */,
 				5843E0E22467A4C500E82E90 /* Routes */,
+				5843E1032467A84F00E82E90 /* Models */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -284,10 +285,9 @@
 			children = (
 				585D9A7C24657580002C8012 /* AppDelegate.swift */,
 				585D9A7E24657580002C8012 /* SceneDelegate.swift */,
-				580F41632467AEF800A086C3 /* View */,
 				5843E0EE2467A68E00E82E90 /* Utility */,
 				5843E0D52467A4C500E82E90 /* Networking */,
-				5843E1032467A84F00E82E90 /* Models */,
+				580F41632467AEF800A086C3 /* Screens */,
 				585D9A8224657580002C8012 /* Main.storyboard */,
 				585D9A8524657583002C8012 /* Assets.xcassets */,
 				585D9A8724657583002C8012 /* LaunchScreen.storyboard */,
@@ -317,9 +317,7 @@
 		587FC7252468A3AC00C9B580 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				587FC7262468A3C000C9B580 /* FeedView.swift */,
-				587FC7282468A79B00C9B580 /* DogPictureTableViewCell.swift */,
-				587FC7302468AAC700C9B580 /* DogFilterCollectionViewCell.swift */,
+				587FC7422468FC3300C9B580 /* UIElements */,
 				587FC7322468AD4B00C9B580 /* FeedViewController.swift */,
 				587FC7342468BA7E00C9B580 /* FeedViewModel.swift */,
 			);
@@ -329,17 +327,43 @@
 		587FC73D2468F54000C9B580 /* Dog */ = {
 			isa = PBXGroup;
 			children = (
-				587FC73E2468F66800C9B580 /* DogView.swift */,
+				587FC7432468FC6B00C9B580 /* UIElements */,
 				587FC7402468F68400C9B580 /* DogViewController.swift */,
 			);
 			path = Dog;
 			sourceTree = "<group>";
 		};
+		587FC7422468FC3300C9B580 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				587FC7262468A3C000C9B580 /* FeedView.swift */,
+				587FC7282468A79B00C9B580 /* DogPictureTableViewCell.swift */,
+				587FC7302468AAC700C9B580 /* DogFilterCollectionViewCell.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		587FC7432468FC6B00C9B580 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				587FC73E2468F66800C9B580 /* DogView.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		587FC7442468FC7800C9B580 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				58A57D612467C28A00E8E7AA /* LoginView.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
 		58A57D602467C27300E8E7AA /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				587FC7442468FC7800C9B580 /* UIElements */,
 				585D9A8024657580002C8012 /* LoginViewController.swift */,
-				58A57D612467C28A00E8E7AA /* LoginView.swift */,
 				58E86A992467C3E8008FAF44 /* LoginViewModel.swift */,
 			);
 			path = Login;
