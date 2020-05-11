@@ -42,7 +42,11 @@ class FeedViewController: CustomViewController<FeedView> {
     }
     
     private func selectFilter(at index: Int) {
-        contentView.collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .left)
+        contentView.collectionView.selectItem(
+            at: IndexPath(item: index, section: 0),
+            animated: true,
+            scrollPosition: .left
+        )
         viewModel.currentFeed = Feed(category: viewModel.filterOptions[index].rawValue)
         contentView.tableView.reloadData()
         viewModel.getFeed()
@@ -93,5 +97,14 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
             cell.set(image: image)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let imageUrl = viewModel.currentFeed?.dogImages?[indexPath.row],
+            let category = viewModel.currentFeed?.category?.capitalized else { return }
+        navigationController?.pushViewController(
+            DogViewController(imageUrl: imageUrl, category: category),
+            animated: true
+        )
     }
 }
