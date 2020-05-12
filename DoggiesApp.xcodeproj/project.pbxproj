@@ -31,6 +31,7 @@
 		585D9A9424657584002C8012 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A9324657584002C8012 /* LoginTests.swift */; };
 		585D9A9F24657584002C8012 /* DoggiesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A9E24657584002C8012 /* DoggiesAppUITests.swift */; };
 		58798D4A246A21D300DAC194 /* FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58798D49246A21D300DAC194 /* FeedTests.swift */; };
+		58798D4C246A2E3C00DAC194 /* FeedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58798D4B246A2E3B00DAC194 /* FeedRepository.swift */; };
 		587FC7272468A3C000C9B580 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FC7262468A3C000C9B580 /* FeedView.swift */; };
 		587FC7292468A79B00C9B580 /* DogPictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FC7282468A79B00C9B580 /* DogPictureCollectionViewCell.swift */; };
 		587FC72C2468A9E000C9B580 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FC72A2468A9E000C9B580 /* UITableView+Extensions.swift */; };
@@ -109,6 +110,7 @@
 		585D9A9E24657584002C8012 /* DoggiesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggiesAppUITests.swift; sourceTree = "<group>"; };
 		585D9AA024657584002C8012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58798D49246A21D300DAC194 /* FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTests.swift; sourceTree = "<group>"; };
+		58798D4B246A2E3B00DAC194 /* FeedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRepository.swift; sourceTree = "<group>"; };
 		587FC7262468A3C000C9B580 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		587FC7282468A79B00C9B580 /* DogPictureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogPictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		587FC72A2468A9E000C9B580 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				587FC7422468FC3300C9B580 /* UIElements */,
 				587FC7322468AD4B00C9B580 /* FeedViewController.swift */,
 				587FC7342468BA7E00C9B580 /* FeedViewModel.swift */,
+				58798D4B246A2E3B00DAC194 /* FeedRepository.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				585D9A8124657580002C8012 /* LoginViewController.swift in Sources */,
 				587FC72F2468A9EE00C9B580 /* Reusable.swift in Sources */,
 				587FC7272468A3C000C9B580 /* FeedView.swift in Sources */,
+				58798D4C246A2E3C00DAC194 /* FeedRepository.swift in Sources */,
 				587FC72D2468A9E000C9B580 /* UICollectionView+Extensions.swift in Sources */,
 				5843E0EA2467A4C500E82E90 /* NetworkResponse.swift in Sources */,
 				585D9A7D24657580002C8012 /* AppDelegate.swift in Sources */,

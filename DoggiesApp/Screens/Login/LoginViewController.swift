@@ -38,7 +38,14 @@ extension LoginViewController: LoginViewControllerFeedback {
     }
     
     func succesSignin() {
-        let feedNav = UINavigationController(rootViewController: FeedViewController())
+        let feedNav = UINavigationController(
+            rootViewController: FeedViewController(
+                viewModel: FeedViewModel(
+                    repository: FeedRepository(),
+                    filterOptions: [.husky, .hound, .pug, .labrador]
+                )
+            )
+        )
         feedNav.modalPresentationStyle = .fullScreen
         present(feedNav, animated: true, completion: nil)
     }

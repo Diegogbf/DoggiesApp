@@ -11,7 +11,7 @@ import UIKit
 class FeedViewController: CustomViewController<FeedView> {
     
     // MARK: Variables
-    private lazy var viewModel: FeedViewModelType = FeedViewModel(delegate: self)
+    private var viewModel: FeedViewModelType?
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -19,9 +19,15 @@ class FeedViewController: CustomViewController<FeedView> {
         setup()
     }
     
+    convenience required init(viewModel: FeedViewModel) {
+        self.init()
+        self.viewModel = viewModel
+    }
+    
     // MARK: Setup
     private func setup() {
         title = "DoggiesApp"
+        viewModel?.delegate = self
         setupCollectionView()
     }
     
@@ -30,7 +36,7 @@ class FeedViewController: CustomViewController<FeedView> {
         contentView.dogsCollectionView.dataSource = self
         contentView.dogsCollectionView.pullToRefreshAction = { [weak self] in
             guard let self = self else { return }
-            self.viewModel.getFeed()
+            self.viewModel?.getFeed()
         }
         
         contentView.filterCollectionView.delegate = self
@@ -44,9 +50,9 @@ class FeedViewController: CustomViewController<FeedView> {
             animated: true,
             scrollPosition: .left
         )
-        viewModel.currentFeed = Feed(category: viewModel.filterOptions[index].rawValue)
+        viewModel?.set(currentCategory: index)
         contentView.dogsCollectionView.reloadData()
-        viewModel.getFeed()
+        viewModel?.getFeed()
     }
 }
 
@@ -75,20 +81,20 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == contentView.filterCollectionView {
-            return viewModel.filterOptions.count
+            return viewModel?.filterOptions.count ?? 0
         } else {
-            return viewModel.currentFeed?.dogImages?.count ?? 0
+            return viewModel?.currentFeed?.dogImages?.count ?? 0
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == contentView.filterCollectionView {
             let cell = collectionView.dequeueReusableCell(DogFilterCollectionViewCell.self, indexPath: indexPath)
-            cell.set(filterName: viewModel.filterOptions[indexPath.item].rawValue.capitalized)
+            cell.set(filterName: viewModel?.filterOptions[indexPath.item].rawValue.capitalized ?? "")
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(DogPictureCollectionViewCell.self, indexPath: indexPath)
-            if let image = viewModel.currentFeed?.dogImages?[indexPath.row] {
+            if let image = viewModel?.currentFeed?.dogImages?[indexPath.row] {
                 cell.set(image: image)
             }
             return cell
@@ -99,8 +105,8 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if collectionView == contentView.filterCollectionView {
             selectFilter(at: indexPath.item)
         } else {
-            guard let imageUrl = viewModel.currentFeed?.dogImages?[indexPath.row],
-                let category = viewModel.currentFeed?.category?.capitalized else { return }
+            guard let imageUrl = viewModel?.currentFeed?.dogImages?[indexPath.row],
+                let category = viewModel?.currentFeed?.category?.capitalized else { return }
             navigationController?.pushViewController(
                 DogViewController(imageUrl: imageUrl, category: category),
                 animated: true

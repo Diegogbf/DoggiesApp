@@ -22,36 +22,50 @@ enum FilterOptions: String {
 }
 
 protocol FeedViewModelType {
-    var currentFeed: Feed? { get set }
     var filterOptions: [FilterOptions] { get }
+    var currentFeed: Feed? { get set }
+    var delegate: FeedFeedBack? { get set }
     func getFeed()
-    init(delegate: FeedFeedBack)
+    func set(currentCategory index: Int)
+    init(repository: FeedRepositoryFactory, filterOptions: [FilterOptions])
 }
 
 final class FeedViewModel: FeedViewModelType {
+    
+    // MARK: Variables
     var currentFeed: Feed?
     var filterOptions: [FilterOptions] = [.husky, .hound, .pug, .labrador]
-    private weak var delegate: FeedFeedBack?
+    weak var delegate: FeedFeedBack?
+    private var repository: FeedRepositoryFactory?
+    private var currentCategory: FilterOptions = .husky
     
-    init(delegate: FeedFeedBack) {
-        self.delegate = delegate
+    // MARK: Init
+    init(repository: FeedRepositoryFactory, filterOptions: [FilterOptions]) {
+        self.repository = repository
+        self.filterOptions = filterOptions
     }
     
+    // MARK: Api Request
     func getFeed() {
         delegate?.loader(show: true)
-        ServiceLayer.request(
-            route: Router.getFeed(request: Feed(category: currentFeed?.category)),
+        repository?.getFeed(
+            category: currentCategory,
             onSuccess: { [weak self] (feed: Feed) in
                 guard let self = self else { return }
                 self.delegate?.loader(show: false)
                 self.currentFeed = feed
                 self.delegate?.succes()
-            },
-            onError: { [weak self] errorMsg in
+            }, onError: { [weak self] errorMsg in
                 guard let self = self else { return }
                 self.delegate?.loader(show: false)
                 self.delegate?.showError(msg: errorMsg)
             }
         )
+    }
+    
+    func set(currentCategory index: Int) {
+        if !filterOptions.isEmpty {
+            currentCategory = filterOptions[index]
+        }
     }
 }
