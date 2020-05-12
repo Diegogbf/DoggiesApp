@@ -19,7 +19,7 @@ class LoginView: UIView {
     
     lazy var signinButton: CustomButton = {
         let signinButton = CustomButton(title: "Sign In")
-        signinButton.backgroundColor = .blue
+        signinButton.backgroundColor = .mainColor
         signinButton.layer.cornerRadius = Layout.signinButtonCornerRadius
         return signinButton
     }()
@@ -34,10 +34,33 @@ class LoginView: UIView {
         return stackView
     }()
     
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.image = UIImage(named: "dog")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private lazy var containerView: UIView = {
+        let containerView = UIView(frame: .zero)
+        containerView.backgroundColor = .white
+        containerView.layer.cornerRadius = Layout.contenViewRadius
+        return containerView
+    }()
+    
+    private lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel(frame: .zero)
+        titleLabel.textColor = .white
+        titleLabel.text = "DoggiesApp"
+        titleLabel.font = UIFont.systemFont(ofSize: 35, weight: .bold)
+        return titleLabel
+    }()
+    
     private enum Layout {
-        static let signinButtonCornerRadius: CGFloat = 8
-        static let stackViewEdgesDistance: CGFloat = 16
-        static let elementsDistance: CGFloat = 8
+        static let signinButtonCornerRadius: CGFloat = 16
+        static let stackViewEdgesDistance: CGFloat = 32
+        static let elementsDistance: CGFloat = 16
+        static let contenViewRadius: CGFloat = 30
     }
     
     override func didMoveToSuperview() {
@@ -46,11 +69,21 @@ class LoginView: UIView {
     }
     
     private func setupLayout() {
-        backgroundColor = .white
-        addSubview(stackView)
+        backgroundColor = .mainColor
+        [imageView, containerView].forEach { addSubview($0) }
+        containerView.addSubview(stackView)
+        
         stackView.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
+            $0.edges.equalToSuperview().inset(Layout.stackViewEdgesDistance)
+        }
+        
+        containerView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(Layout.stackViewEdgesDistance)
+            $0.centerY.equalToSuperview()
+        }
+        
+        imageView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 }

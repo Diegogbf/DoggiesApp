@@ -39,6 +39,8 @@ class CustomButton: UIButton {
     // MARK: - setup
     private func setup() {
         setTitle(title, for: .normal)
+        setTitleColor(.white, for: .normal)
+        titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
     }
     
     // MARK: - Loader Handling

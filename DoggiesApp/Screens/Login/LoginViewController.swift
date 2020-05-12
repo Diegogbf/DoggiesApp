@@ -25,9 +25,11 @@ class LoginViewController: CustomViewController<LoginView> {
     }
     
     @objc private func signin() {
-        guard let email = contentView.emailTextField.text else { return }
-        if email.isValidEmail {
+        if contentView.emailTextField.isValid {
+            guard let email = contentView.emailTextField.text else { return }
             viewModel.signin(email: email)
+        } else {
+            showError(msg: "E-mail inválido")
         }
     }
 }

@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Dalmatian_Dog_PNG_Clip_Art-2581.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Dalmatian_Dog_PNG_Clip_Art-2581@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Dalmatian_Dog_PNG_Clip_Art-2581@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
