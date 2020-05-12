@@ -35,8 +35,8 @@ class CustomCollectionView: UICollectionView {
     }
     
     func showLoader(_ show: Bool) {
-        DispatchQueue.main.async {
-            show ? self.pullToRefreshControl.beginRefreshing() : self.pullToRefreshControl.endRefreshing()
+        DispatchQueue.main.async { [weak self] in
+            show ? self?.pullToRefreshControl.beginRefreshing() : self?.pullToRefreshControl.endRefreshing()
         }
     }
 }

@@ -39,12 +39,15 @@ class FeedViewController: CustomViewController<FeedView> {
             self.viewModel?.getFeed()
         }
         
-        contentView.filterCollectionView.delegate = self
-        contentView.filterCollectionView.dataSource = self
+        contentView.filterCollectionView.setup(
+            itens: viewModel?.filterOptions.compactMap { $0.rawValue } ?? [],
+            selectorDelegate: self
+        )
         selectFilter(at: 0)
     }
     
     private func selectFilter(at index: Int) {
+        viewModel?.currentFeed = nil
         contentView.filterCollectionView.selectItem(
             at: IndexPath(item: index, section: 0),
             animated: true,
@@ -79,38 +82,32 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let squareSide = UIScreen.main.bounds.width/CGFloat(2) - 10
         return CGSize(width: squareSide, height: squareSide)
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == contentView.filterCollectionView {
-            return viewModel?.filterOptions.count ?? 0
-        } else {
-            return viewModel?.currentFeed?.dogImages?.count ?? 0
-        }
+        return viewModel?.currentFeed?.dogImages?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == contentView.filterCollectionView {
-            let cell = collectionView.dequeueReusableCell(DogFilterCollectionViewCell.self, indexPath: indexPath)
-            cell.set(filterName: viewModel?.filterOptions[indexPath.item].rawValue.capitalized ?? "")
-            return cell
-        } else {
-            let cell = collectionView.dequeueReusableCell(DogPictureCollectionViewCell.self, indexPath: indexPath)
-            if let image = viewModel?.currentFeed?.dogImages?[indexPath.row] {
-                cell.set(image: image)
-            }
-            return cell
+        let cell = collectionView.dequeueReusableCell(DogPictureCollectionViewCell.self, indexPath: indexPath)
+        if let image = viewModel?.currentFeed?.dogImages?[indexPath.row] {
+            cell.set(image: image)
         }
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == contentView.filterCollectionView {
-            selectFilter(at: indexPath.item)
-        } else {
-            guard let imageUrl = viewModel?.currentFeed?.dogImages?[indexPath.row],
-                let category = viewModel?.currentFeed?.category?.capitalized else { return }
-            navigationController?.pushViewController(
-                DogViewController(imageUrl: imageUrl, category: category),
-                animated: true
-            )
-        }
+        guard let imageUrl = viewModel?.currentFeed?.dogImages?[indexPath.row],
+            let category = viewModel?.currentFeed?.category?.capitalized else { return }
+        navigationController?.pushViewController(
+            DogViewController(imageUrl: imageUrl, category: category),
+            animated: true
+        )
+    }
+}
+
+// MARK: SelectorCollectionViewDelegate
+extension FeedViewController: SelectorCollectionViewDelegate {
+    func didSelectItem(at index: Int) {
+        selectFilter(at: index)
     }
 }

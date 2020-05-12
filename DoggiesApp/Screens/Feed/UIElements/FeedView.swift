@@ -12,18 +12,8 @@ import SnapKit
 class FeedView: UIView {
     
     // MARK: Components
-    lazy var filterCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        if #available(iOS 10.0, *) {
-            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        } 
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: Layout.filterCollectionLeftInset, bottom: 0, right: 0)
-        collectionView.backgroundColor = .white
-        collectionView.register(DogFilterCollectionViewCell.self)
-        collectionView.showsHorizontalScrollIndicator = false
+    lazy var filterCollectionView: SelectorCollectionView = {
+        let collectionView = SelectorCollectionView()
         return collectionView
     }()
     

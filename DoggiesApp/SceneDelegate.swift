@@ -24,7 +24,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.rootViewController = LoginViewController()
         } else {
             window.rootViewController = UINavigationController(
-                rootViewController: FeedViewController()
+                rootViewController: FeedViewController(
+                    viewModel: FeedViewModel(
+                        repository: FeedRepository(),
+                        filterOptions: [.husky, .hound, .pug, .labrador]
+                    )
+                )
             )
         }
         self.window = window
