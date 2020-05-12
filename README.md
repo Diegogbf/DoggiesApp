@@ -11,7 +11,7 @@
 - O projeto possui apenas um target e pode ser rodado em qualquer dispositivo iOS desde que seja >= iOS 9
 - O processo de Login ocorre apenas uma vez. O usuário permanece logado nas outras vezes em que for utilizar o app.
 
-Frameworks utilizados: 
+<b>Frameworks utilizados:</b>
 - SnapKit - Utiizado com o intuito de facilitar o setup de constraints com ViewCode
 - SwiftKeychainWrapper - Utilizado para lidar com o armazenamento do token de acesso do usuário, salvando-o através da Keychain API. Uma alternativa mais segura frente ao uso do UserDefaults
 
