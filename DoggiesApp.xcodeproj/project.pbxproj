@@ -29,7 +29,6 @@
 		585D9A8624657583002C8012 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 585D9A8524657583002C8012 /* Assets.xcassets */; };
 		585D9A8924657583002C8012 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585D9A8724657583002C8012 /* LaunchScreen.storyboard */; };
 		585D9A9424657584002C8012 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A9324657584002C8012 /* LoginTests.swift */; };
-		585D9A9F24657584002C8012 /* DoggiesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A9E24657584002C8012 /* DoggiesAppUITests.swift */; };
 		58798D4A246A21D300DAC194 /* FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58798D49246A21D300DAC194 /* FeedTests.swift */; };
 		58798D4C246A2E3C00DAC194 /* FeedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58798D4B246A2E3B00DAC194 /* FeedRepository.swift */; };
 		58798D4E246A3EC000DAC194 /* SelectorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58798D4D246A3EC000DAC194 /* SelectorCollectionView.swift */; };
@@ -109,7 +108,6 @@
 		585D9A9324657584002C8012 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		585D9A9524657584002C8012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		585D9A9A24657584002C8012 /* DoggiesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoggiesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		585D9A9E24657584002C8012 /* DoggiesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggiesAppUITests.swift; sourceTree = "<group>"; };
 		585D9AA024657584002C8012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58798D49246A21D300DAC194 /* FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTests.swift; sourceTree = "<group>"; };
 		58798D4B246A2E3B00DAC194 /* FeedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRepository.swift; sourceTree = "<group>"; };
@@ -318,7 +316,6 @@
 		585D9A9D24657584002C8012 /* DoggiesAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				585D9A9E24657584002C8012 /* DoggiesAppUITests.swift */,
 				585D9AA024657584002C8012 /* Info.plist */,
 			);
 			path = DoggiesAppUITests;
@@ -721,7 +718,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				585D9A9F24657584002C8012 /* DoggiesAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,7 +806,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -864,7 +860,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -923,7 +919,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9UL6YNXSQ;
 				INFOPLIST_FILE = DoggiesAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -946,7 +942,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9UL6YNXSQ;
 				INFOPLIST_FILE = DoggiesAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
