@@ -28,8 +28,9 @@
 		585D9A8424657580002C8012 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585D9A8224657580002C8012 /* Main.storyboard */; };
 		585D9A8624657583002C8012 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 585D9A8524657583002C8012 /* Assets.xcassets */; };
 		585D9A8924657583002C8012 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585D9A8724657583002C8012 /* LaunchScreen.storyboard */; };
-		585D9A9424657584002C8012 /* DoggiesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A9324657584002C8012 /* DoggiesAppTests.swift */; };
+		585D9A9424657584002C8012 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A9324657584002C8012 /* LoginTests.swift */; };
 		585D9A9F24657584002C8012 /* DoggiesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D9A9E24657584002C8012 /* DoggiesAppUITests.swift */; };
+		58798D4A246A21D300DAC194 /* FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58798D49246A21D300DAC194 /* FeedTests.swift */; };
 		587FC7272468A3C000C9B580 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FC7262468A3C000C9B580 /* FeedView.swift */; };
 		587FC7292468A79B00C9B580 /* DogPictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FC7282468A79B00C9B580 /* DogPictureCollectionViewCell.swift */; };
 		587FC72C2468A9E000C9B580 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FC72A2468A9E000C9B580 /* UITableView+Extensions.swift */; };
@@ -102,11 +103,12 @@
 		585D9A8824657583002C8012 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		585D9A8A24657583002C8012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		585D9A8F24657584002C8012 /* DoggiesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoggiesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		585D9A9324657584002C8012 /* DoggiesAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggiesAppTests.swift; sourceTree = "<group>"; };
+		585D9A9324657584002C8012 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		585D9A9524657584002C8012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		585D9A9A24657584002C8012 /* DoggiesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoggiesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		585D9A9E24657584002C8012 /* DoggiesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggiesAppUITests.swift; sourceTree = "<group>"; };
 		585D9AA024657584002C8012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58798D49246A21D300DAC194 /* FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTests.swift; sourceTree = "<group>"; };
 		587FC7262468A3C000C9B580 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		587FC7282468A79B00C9B580 /* DogPictureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogPictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		587FC72A2468A9E000C9B580 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -299,7 +301,8 @@
 		585D9A9224657584002C8012 /* DoggiesAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				585D9A9324657584002C8012 /* DoggiesAppTests.swift */,
+				585D9A9324657584002C8012 /* LoginTests.swift */,
+				58798D49246A21D300DAC194 /* FeedTests.swift */,
 				585D9A9524657584002C8012 /* Info.plist */,
 			);
 			path = DoggiesAppTests;
@@ -697,7 +700,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				585D9A9424657584002C8012 /* DoggiesAppTests.swift in Sources */,
+				585D9A9424657584002C8012 /* LoginTests.swift in Sources */,
+				58798D4A246A21D300DAC194 /* FeedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
